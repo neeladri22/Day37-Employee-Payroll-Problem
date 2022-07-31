@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace EmployeePayRollJsonServer
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace JsonServer
+    {
+        public class Employee
+        {
+
+            public int id { get; set; }
+            public string name { get; set; }
+            public string salary { get; set; }
+
+        }
+    }
+   
+}

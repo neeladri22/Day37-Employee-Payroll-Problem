@@ -1,0 +1,58 @@
+
+Welcome to Employee Payroll Problem
+------------------------------------------------------------
+
+Created EmployeePayrollData.json file
+------------------------------------------------------------
+
+Added employee information such as id, name and salary
+------------------------------------------------------------
+
+UC1 - Commands
+------------------------------------------------------------
+
+json-server --routes routes.json --watch EmployeePayrollData.json
+
+
+by searching below link in browser we can get all the employee details present in EmployeePayrollData.json
+
+http://localhost:3000/employees
+
+
+------------------------------------------------------------
+Curl Operation
+
+
+UC1 - Commands
+------------------------------------------------------------
+To get all the Employee details by passing below commands
+
+curl -X GET -H "Content-Type: application/json" "http://localhost:3000/employees"
+
+
+UC2 - Commands
+------------------------------------------------------------
+
+POST
+
+curl -X POST -H "Content-Type: application/json" -d'{"id":5,"name" : "Sachin", "salary" : "30000"}' "http://localhost:3000/employees"
+
+UC3 - Commands
+------------------------------------------------------------
+curl -X POST -H "Content-Type: application/json" -d'{"id":6,"name" : "Varshith", "salary" : "40000"}' "http://localhost:3000/employees"
+curl -X POST -H "Content-Type: application/json" -d'{"id":7,"name" : "Hemanth", "salary" : "25000"}' "http://localhost:3000/employees"
+curl -X POST -H "Content-Type: application/json" -d'{"id":8,"name" : "Sundar", "salary" : "15000"}' "http://localhost:3000/employees"
+
+UC4 - Commands
+------------------------------------------------------------
+
+PUT
+
+curl -X PUT -H "Content-Type: application/json" -d'{"id":8,"name" : "Sundar", "salary" : "10000"}' "http://localhost:3000/employees/update/8"
+
+UC5 - Commands
+------------------------------------------------------------
+
+DELETE
+
+curl -X DELETE -H "Content-Type: application/json"  "http://localhost:3000/employees/delete/8"
