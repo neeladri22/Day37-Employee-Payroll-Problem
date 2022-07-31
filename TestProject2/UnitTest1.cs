@@ -66,7 +66,7 @@ namespace RestAPI
         public void onCallEditEmployeeList()
         {
             //Arrange
-            RestRequest request = new RestRequest("/employees/8 ", Method.Put);
+            RestRequest request = new RestRequest("/employees/1 ", Method.Put);
             JObject jobject = new JObject();
             jobject.Add("name", "Neeladri");
             jobject.Add("salary", "15000");
