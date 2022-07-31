@@ -86,5 +86,22 @@ namespace RestAPI
             System.Console.WriteLine(response.Content);
         }
 
+        [Test]
+        public void onCallDeleteEmployeeList()
+        {
+            //Arrange
+            RestRequest request = new RestRequest("/employees/8 ", Method.Delete);
+
+            //Act
+            RestResponse response = client.Execute(request);
+
+
+            //Assert
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+
+            Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
+            System.Console.WriteLine(response.Content);
+        }
+
     }
 }
