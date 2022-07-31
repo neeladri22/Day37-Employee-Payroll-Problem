@@ -63,11 +63,12 @@ namespace RestAPI
             System.Console.WriteLine(response.Content);
         }
 
+
         [Test]
         public void onCallEditEmployeeList()
         {
             //Arrange
-            RestRequest request = new RestRequest("/employees/8 ", Method.Put);
+            RestRequest request = new RestRequest("/employees/1 ", Method.Put);
             JObject jobject = new JObject();
             jobject.Add("name", "Neeladri");
             jobject.Add("salary", "15000");
@@ -79,13 +80,32 @@ namespace RestAPI
 
 
             //Assert
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
 
             Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
             Assert.AreEqual("Hema", dataResponse.name);
             Assert.AreEqual("60000", dataResponse.salary);
             System.Console.WriteLine(response.Content);
         }
+
+        [Test]
+        public void onCallDeleteEmployeeList()
+        {
+            //Arrange
+            RestRequest request = new RestRequest("/employees/8 ", Method.Delete);
+
+            //Act
+            RestResponse response = client.Execute(request);
+
+
+            //Assert
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+
+            Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
+            System.Console.WriteLine(response.Content);
+        }
+
+
 
     }
 }
